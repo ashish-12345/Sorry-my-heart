@@ -1,52 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>For You ❤️</title>
+  <meta charset="UTF-8">
+  <title>Good Morning ❤️</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background-color: #ffeef1;
       font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: white;
       text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 20px;
     }
+
     .container {
       position: relative;
-      width: 100%;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    img {
-      width: 100%;
+      max-width: 500px;
+      margin: auto;
       border-radius: 20px;
-      margin-top: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
     }
-    button {
+
+    .background-img {
+      width: 100%;
+      display: block;
+    }
+
+    .button {
       position: absolute;
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      padding: 12px 24px;
-      font-size: 16px;
-      background-color: #ff4b5c;
-      color: white;
+      background-color: #ff4081;
       border: none;
+      padding: 15px 30px;
+      font-size: 18px;
       border-radius: 30px;
+      color: white;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 15px rgba(255, 64, 129, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    .hearts {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 30px;
+      animation: float 6s infinite ease-in-out;
+      z-index: 2;
+    }
+
+    @keyframes float {
+      0% { top: 100%; opacity: 0; }
+      50% { opacity: 1; }
+      100% { top: 0%; opacity: 0; }
     }
   </style>
 </head>
 <body>
+
+  <div class="hearts">💖 💕 💘 💝 💓</div>
+
   <div class="container">
-    <img src="IMG-20250408-WA0000.jpg" alt="Her Photo">
-    <button onclick="showMessage()">Click Here</button>
+    <!-- Replace with your girl's image -->
+    <img class="background-img" src="your-girls-photo.jpg" alt="Her Photo">
+    <button class="button" onclick="sayHi()">Click Me</button>
   </div>
 
   <script>
-    function showMessage() {
-      alert("Good Morning ☀️\nSorry my love ❤️");
+    function sayHi() {
+      alert("Good Morning ☀️\nSorry, my love ❤️\nJust wanted to see you smile 💌");
     }
   </script>
+
 </body>
 </html>
