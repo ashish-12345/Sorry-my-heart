@@ -60,7 +60,7 @@
 
   <div class="container">
     <!-- Replace this with your girl's image -->
-    <img src="herphoto.jpg" alt="Her Beautiful Smile">
+    <img src="IMG-20250408-WA0000.jpg" alt="Her Beautiful Smile">
 
     <button onclick="showMessage()">Click Here</button>
   </div>
