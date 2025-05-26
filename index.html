@@ -12,14 +12,18 @@
       color: white;
       text-align: center;
       height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
       overflow: hidden;
-      position: relative;
     }
 
     .hearts {
       font-size: 90px;
       animation: float 6s infinite ease-in-out, glow 1.5s infinite alternate;
-      margin-top: 50px;
+      margin-bottom: 30px;
       text-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
     }
 
@@ -68,7 +72,7 @@
       display: none;
     }
 
-    /* Heart popup */
+    /* Heart-shaped popup */
     .heart-popup {
       position: fixed;
       top: 50%;
@@ -128,49 +132,9 @@
         transform: translate(-50%, -50%) rotate(-45deg) scale(1);
       }
     }
-
-    /* Sparkles */
-    .sparkle {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: white;
-      border-radius: 50%;
-      box-shadow: 0 0 10px white;
-      animation: sparkle 3s linear infinite;
-      opacity: 0.8;
-    }
-
-    @keyframes sparkle {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 0.8;
-      }
-      50% {
-        opacity: 1;
-        transform: translateY(-200px) scale(1.5);
-      }
-      100% {
-        transform: translateY(-400px) scale(0);
-        opacity: 0;
-      }
-    }
   </style>
 </head>
 <body>
-
-  <!-- Sparkles container -->
-  <script>
-    for (let i = 0; i < 50; i++) {
-      const sparkle = document.createElement('div');
-      sparkle.className = 'sparkle';
-      sparkle.style.left = Math.random() * 100 + 'vw';
-      sparkle.style.bottom = Math.random() * 100 + 'px';
-      sparkle.style.animationDuration = (2 + Math.random() * 2) + 's';
-      sparkle.style.animationDelay = Math.random() * 5 + 's';
-      document.body.appendChild(sparkle);
-    }
-  </script>
 
   <div class="hearts">💖 💕 💘 💝 💓</div>
 
@@ -179,7 +143,7 @@
 
   <button class="button" onclick="playLove()">😘sus,click here😘</button>
 
-  <!-- Heart popup -->
+  <!-- Heart popup with message inside -->
   <div id="customPopup" class="heart-popup">
     <div class="popup-text">Good Morning My Love<br>Sorry Baby 😔❣️</div>
   </div>
