@@ -72,52 +72,69 @@
       display: none;
     }
 
-    /* Heart-shaped popup */
     .heart-popup {
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 300px;
-      height: 270px;
-      background-color: white;
       display: none;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
       z-index: 1000;
-      border-radius: 20px;
-      border: 4px solid red;
     }
 
+    /* Heart Shape with Beat Animation */
     .heart-shape {
       position: relative;
-      width: 100px;
-      height: 90px;
+      width: 200px;
+      height: 180px;
       background: red;
       transform: rotate(-45deg);
-      border: 2px solid red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: heartbeat 1s infinite;
     }
 
     .heart-shape::before,
     .heart-shape::after {
       content: "";
       position: absolute;
-      width: 100px;
-      height: 90px;
+      width: 200px;
+      height: 180px;
       background: red;
-      border: 2px solid red;
       border-radius: 50%;
     }
 
     .heart-shape::before {
-      top: -50px;
+      top: -100px;
       left: 0;
     }
 
     .heart-shape::after {
-      left: 50px;
+      left: 100px;
       top: 0;
+    }
+
+    .heart-text {
+      transform: rotate(45deg);
+      padding: 10px;
+      color: white;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: rotate(-45deg) scale(1);
+      }
+      25% {
+        transform: rotate(-45deg) scale(1.1);
+      }
+      50% {
+        transform: rotate(-45deg) scale(0.95);
+      }
+      75% {
+        transform: rotate(-45deg) scale(1.05);
+      }
     }
   </style>
 </head>
@@ -127,9 +144,11 @@
   <p>❣️❣️Love is in the Air❣️❣️</p>
   <button class="button" onclick="playLove()">😘sus,click here😘</button>
 
-  <!-- Heart-only Popup -->
+  <!-- Heart popup with heartbeat -->
   <div id="customPopup" class="heart-popup">
-    <div class="heart-shape"></div>
+    <div class="heart-shape">
+      <div class="heart-text">Sorry Baby</div>
+    </div>
   </div>
 
   <!-- Background Music -->
@@ -141,11 +160,11 @@
   <script>
     function playLove() {
       document.getElementById("bgMusic").play();
-      document.getElementById("customPopup").style.display = 'flex';
+      const popup = document.getElementById("customPopup");
+      popup.style.display = 'block';
 
-      // Hide popup after 6 seconds
       setTimeout(() => {
-        document.getElementById("customPopup").style.display = 'none';
+        popup.style.display = 'none';
       }, 6000);
     }
   </script>
