@@ -59,9 +59,8 @@
   <div class="hearts">💖 💕 💘 💝 💓</div>
 
   <div class="container">
-    <!-- Replace this with your girl's image -->
+    <!-- Make sure the image file name and extension are correct -->
     <img src="IMG-20250408-WA0000.jpg" alt="Her Beautiful Smile">
-
     <button onclick="showMessage()">Click Here</button>
   </div>
 
