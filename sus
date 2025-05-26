@@ -52,6 +52,46 @@
       50% { opacity: 1; transform: translateY(0); }
       100% { opacity: 0; transform: translateY(-100px); }
     }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 300px;
+      text-align: center;
+      color: #ff4b5c;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      animation: popIn 0.4s ease;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .close-btn {
+      margin-top: 20px;
+      background-color: #ff4b5c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -59,14 +99,26 @@
   <div class="hearts">💖 💕 💘 💝 💓</div>
 
   <div class="container">
-    <!-- Make sure the image file name and extension are correct -->
     <img src="IMG-20250408-WA0000.jpg" alt="Her Beautiful Smile">
-    <button onclick="showMessage()">Click Here</button>
+    <button onclick="showModal()">Click Here</button>
+  </div>
+
+  <!-- Modal -->
+  <div id="popupModal" class="modal">
+    <div class="modal-content">
+      <h2>Good Morning ☀️</h2>
+      <p>Sorry my love ❤️<br>Just wanted to see you smile 💌</p>
+      <button class="close-btn" onclick="closeModal()">Aww 🥺</button>
+    </div>
   </div>
 
   <script>
-    function showMessage() {
-      alert("Good Morning ☀️\nSorry my love ❤️\nJust wanted to see you smile 💌");
+    function showModal() {
+      document.getElementById('popupModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('popupModal').style.display = 'none';
     }
   </script>
 
