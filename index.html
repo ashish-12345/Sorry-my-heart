@@ -7,7 +7,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('https://images.unsplash.com/photo-1508923567004-3a6b8004f3d3?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+      background: url('IMG-20250408-WA0000.jpg') no-repeat center center fixed;
       background-size: cover;
       color: white;
       text-align: center;
@@ -15,39 +15,61 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       padding: 0 20px;
+      overflow: hidden;
+    }
+
+    .hearts {
+      font-size: 90px;
+      animation: float 6s infinite ease-in-out, glow 1.5s infinite alternate;
+      margin-bottom: 30px;
+      text-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+    }
+
+    @keyframes float {
+      0% { opacity: 0; transform: translateY(100px); }
+      50% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-100px); }
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+      }
+      to {
+        text-shadow: 0 0 20px #ff1493, 0 0 30px #ff1493;
+      }
+    }
+
+    h1 {
+      font-size: 48px;
+      margin: 10px 0;
+    }
+
+    p {
+      font-size: 24px;
+      margin-bottom: 30px;
     }
 
     .button {
       background-color: #ff4081;
       border: none;
-      padding: 15px 30px;
-      font-size: 20px;
-      border-radius: 30px;
+      padding: 45px 90px;
+      font-size: 60px;
+      border-radius: 90px;
       color: white;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(255, 64, 129, 0.5);
+      box-shadow: 0 8px 30px rgba(255, 64, 129, 0.6);
       transition: transform 0.3s ease;
-      margin-top: 20px;
     }
 
     .button:hover {
       transform: scale(1.1);
     }
 
-    .hearts {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 30px;
-      animation: float 6s infinite ease-in-out;
-    }
-
-    @keyframes float {
-      0% { top: 100%; opacity: 0; }
-      50% { opacity: 1; }
-      100% { top: 0%; opacity: 0; }
+    audio {
+      display: none;
     }
   </style>
 </head>
@@ -58,11 +80,18 @@
   <h1>Good Morning, Beautiful ☀️</h1>
   <p>Sorry, my love. I just want to make you smile today 💌</p>
 
-  <button class="button" onclick="sayHi()">Click here sus to enter in my heart</button>
+  <button class="button" onclick="playLove()">Click here sus to enter in my heart</button>
+
+  <!-- Background Music -->
+  <audio id="bgMusic">
+    <source src="take-me-to-your-heart.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
   <script>
-    function sayHi() {
+    function playLove() {
       alert("Good Morning! 💕 Sorry, my love. Just wanted to make you smile 😊");
+      document.getElementById("bgMusic").play();
     }
   </script>
 
