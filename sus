@@ -74,7 +74,7 @@
 
   <div class="container">
     <!-- Replace with your girl's image -->
-    <img class="background-img" src="your-girls-photo.jpg" alt="Her Photo">
+    <img class="background-img" src="https://github.com/ashish-12345/Sorry-my-heart/blob/main/IMG-20250408-WA0000.jpg" alt="Her Photo">
     <button class="button" onclick="sayHi()">Click Me</button>
   </div>
 
