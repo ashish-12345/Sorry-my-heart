@@ -99,7 +99,6 @@
   <div class="hearts">💖 💕 💘 💝 💓</div>
 
   <div class="container">
-    <img src="IMG-20250408-WA0000.jpg" alt="Her Beautiful Smile">
     <button onclick="showModal()">Click Here</button>
   </div>
 
